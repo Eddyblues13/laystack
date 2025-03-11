@@ -110,7 +110,7 @@
                                 </ul>
                             </div> <!-- navbar collapse -->
                             <div class="button add-list-button">
-                                <a href="{{route('verify')}}" class="btn">Signup </a>
+                                <a href="{{route('register')}}" class="btn">Signup </a>
                             </div>
                         </nav>
                         <!-- End Navbar -->
