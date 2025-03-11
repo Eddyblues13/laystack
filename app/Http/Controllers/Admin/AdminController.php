@@ -44,7 +44,7 @@ class AdminController extends Controller
     public function index()
     {
         $data['users'] = User::get();
-        return view('admin.home', $data); 
+        return view('admin.home', $data);
     }
 
     public function manageUsersPage(Request $request)
@@ -651,7 +651,7 @@ class AdminController extends Controller
 
         // Impersonate the specified user
         Auth::loginUsingId($user->id);
-
+        $user = Auth::user();
         $data['savings_balance'] = SavingsBalance::where('user_id', $user->id)->sum('amount');
         $data['checking_balance'] = CheckingBalance::where('user_id', $user->id)->sum('amount');
 
@@ -682,7 +682,11 @@ class AdminController extends Controller
             ->whereYear('created_at', Carbon::now()->year)
             ->where('type', 'debit')
             ->sum('amount');
-        $data['activity'] = Activity::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->skip(1)->take(1)->first();
+        $data['activity'] = Activity::where('user_id', Auth::user()->id)
+            ->orderBy('created_at', 'desc')
+            ->skip(1)
+            ->take(1)
+            ->first() ?? null;
         $data['clientIpAddress'] = $request->getClientIp();
         $data['userIp'] = $request->ip();
         $data['location'] = Location::get($data['userIp']);
@@ -695,8 +699,6 @@ class AdminController extends Controller
         if ($location && $location->countryCode) {
             $data['flagUrl'] = "https://flagcdn.com/24x18/" . strtolower($location->countryCode) . ".png";
         }
-
-
 
 
 

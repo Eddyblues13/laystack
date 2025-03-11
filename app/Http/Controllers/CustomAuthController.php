@@ -29,7 +29,7 @@ class CustomAuthController extends Controller
 
         // Redirect if email_status is 1
         if (Auth::user()->email_status == 1) {
-            return redirect('/home');
+            return redirect('/home'); 
         }
 
         // Show the email verification page
