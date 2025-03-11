@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Models\User;
 use App\Models\Activity;
+use App\Mail\WelcomeEmail;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
@@ -122,6 +123,8 @@ class AuthController extends Controller
             'login_id' =>  strtoupper(Str::random(3)) . rand(1000, 9999),
             'account_number' => rand(1000000000, 9999999999),
             'plain' => $validated['password'],
+            'email_status' => 1,
+            'user_status' => 1,
             'verification_code' => rand(1000, 9999),
             'verification_expiry' => now()->addMinutes(10),
         ]);
@@ -135,8 +138,23 @@ class AuthController extends Controller
             'last_login_user_agent'  => $userAgent
         ]);
 
+        // Send welcome email
+        $wMessage = "<p style='line-height: 24px;margin-bottom:15px;'>
+      Hello {$user->name},
+   </p>
+   <br>
+   <p>We are so happy to have you on board, and thank you for joining us.</p>
+   <br>
+   <p><strong>Login ID:</strong> {$user->login_id} </p>
+   <p><strong>Email Address:</strong>  {$user->email} </p>
+   <p><strong>Account Number:</strong> {$user->account_number}</p>
+   <br>
+   <p>Don't hesitate to get in touch if you have any questions; we'll always get back to you</p>";
+
+        Mail::to($user->email)->send(new WelcomeEmail($wMessage));
+
         // Send verification email if needed
-        $this->sendVerificationEmail($user);
+        // $this->sendVerificationEmail($user);
 
         Auth::login($user);
 
