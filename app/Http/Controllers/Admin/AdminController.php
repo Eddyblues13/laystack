@@ -44,7 +44,7 @@ class AdminController extends Controller
     public function index()
     {
         $data['users'] = User::get();
-        return view('admin.home', $data);
+        return view('admin.home', $data); 
     }
 
     public function manageUsersPage(Request $request)

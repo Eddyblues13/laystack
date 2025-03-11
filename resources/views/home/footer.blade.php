@@ -35,7 +35,7 @@
                         <h5>Head Office</h5>
                         <p>301 East Water Street, Charlottesville, VA 22904 Virginia.</p>
                         <ul class="mt-20">
-                            <li><a href="javascript:void(0)"><i class="flaticon-mobile"></i>+447741834561</a></li>
+                            <li><a href="javascript:void(0)"><i class="flaticon-mobile"></i></a></li>
 
                             <li><a href="javascript:void(0)"><i class="flaticon-mail"></i>
                                     support@laystacktb.com
@@ -80,7 +80,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <p class="copyright-text mb-0">All Rights Reserved 2024 <a href="javascript:void(0)/"
+                    <p class="copyright-text mb-0">All Rights Reserved 2025 <a href="javascript:void(0)/"
                             rel="nofollow">support@laystacktb.com</a>
                     </p>
                 </div>
