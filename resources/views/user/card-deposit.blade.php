@@ -81,7 +81,7 @@
                             LAYSTACK Trust Bank account from your External Debit/Credit Card
                         </h5>
                         <hr>
-                        <form method="post" action="{{ route('user.card.deposit.store') }}">
+                        <form method="post" action="{{ url('user/card-deposit') }}">
                             @csrf
                             <div class="form-group basic">
                                 <div class="input-wrapper">

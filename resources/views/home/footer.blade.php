@@ -51,7 +51,7 @@
                             <li><a href="javascript:void(0)">Business Loan</a></li>
                             <li><a href="javascript:void(0)">Personal Loan</a></li>
                             <li><a href="javascript:void(0)">Home Loan</a></li>
-                            <li><a href="javascript:void(0)">Car Lone</a></li>
+                            <li><a href="javascript:void(0)">Car Loan</a></li>
                             <li><a href="javascript:void(0)">Land Loan</a></li>
                         </ul>
                     </div>

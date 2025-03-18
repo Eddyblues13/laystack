@@ -291,7 +291,7 @@
 
                             </div>
                             <div class="item">
-                                <a href="user/Account/Investment">
+                                <a href="{{route('investment')}}">
                                     <div class="icon-wrapper">
                                         <i class="fas fa-chart-bar"></i>
                                     </div>

@@ -95,10 +95,10 @@
                                             <select class="form-control custom-select" name="account" required>
                                                 <option value=""></option>
                                                 <option value="savings">Savings (***0260) - {{ Auth::user()->currency }}
-                                                    {{ $savingsBalance }}
+                                                    {{ $savings_balance }}
                                                 </option>
                                                 <option value="checking">Checking (***0942) - {{ Auth::user()->currency
-                                                    }} {{ $checkingBalance }}
+                                                    }} {{ $checking_balance }}
                                                 </option>
                                             </select>
                                         </div>

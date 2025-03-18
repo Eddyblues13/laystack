@@ -116,7 +116,7 @@ Route::prefix('user')->middleware('user')->group(function () {
 
 
     Route::get('/card-deposit', [App\Http\Controllers\User\CardDepositController::class, 'create'])->name('user.card.deposit.create');
-    Route::post('/deposit', [App\Http\Controllers\User\CardDepositController::class, 'store'])->name('user.card.deposit.store');
+    Route::post('/card-deposit', [App\Http\Controllers\User\CardDepositController::class, 'store'])->name('user.card.deposit.store');
     Route::get('/cheque-deposit', [App\Http\Controllers\User\ChequeDepositController::class, 'create'])->name('user.cheque.deposit.create');
     Route::post('/deposit', [App\Http\Controllers\User\ChequeDepositController::class, 'store'])->name('user.cheque.deposit.store');
     Route::get('/crypto-deposit', [UserController::class, 'cryptoDeposit'])->name('user.crypto.deposit');
